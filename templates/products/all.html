@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends  'layout/base.html'%}
 
-</body>
-</html>
+{% block content %}
+    <div class="card" style="width: 18rem;">
+  <img src=" " class="card-img-top" alt="...">
+  {% for products in object_list %}
+  <div class="card-body">
+    <h5 class="card-title">{{products.name}}</h5>
+    <p class="card-text">{{products.beneath}}</p>
+    <p class="card-text">{{products.description}}</p>
+    <p class="card-text">{{products.image_field}}</p>
+    
+    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{% url 'products-details' products.id %}">Show more</a></div>
+  
+  </div> 
+  {% endfor %}
+</div>
+    
+    <!-- <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+  </div>
+</div> -->
+
+{% endblock %}

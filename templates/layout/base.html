@@ -1,1 +1,49 @@
-{% load  static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>White On The Valley</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon"
+          href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg' %}"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'startbootstrap-the-big-picture-gh-pages/css/styles.css' %}" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+{% include 'layout/menu.html' %}
+<!-- Page Content-->
+
+{% block content %}
+    <section>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-lg-6">
+                    <!--<h1 class="mt-5">The Big Picture</h1> -->
+                    <link rel="icon" type="image/x-icon"
+                          href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/favicon.ico' %}"/>
+
+                    <p class="text_color">We believe in the language of flowers, where each bloom tells a story and
+                        every arrangement is a
+                        masterpiece crafted with passion and creativity.
+                        Step into our floral sanctuary and be captivated by the delicate fragrances and vibrant hues
+                        that fill the air. Whether you're celebrating a special occasion, expressing love and affection,
+                        or simply seeking to brighten someone's day, our curated collection of exquisite blooms promises
+                        to evoke emotions and create lasting memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="{% static 'startbootstrap-the-big-picture-gh-pages/js/scripts.js' %}"></script>
+</body>
+</html>
+

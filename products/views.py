@@ -21,17 +21,19 @@ class ProductsUpdateView(UpdateView):
     form_class = ProductsModel
     template_name = 'create_update_form.html'
     model = ProductsModel
-    success_url = reverse_lazy('products-all')
+    success_url = reverse_lazy('products-list')
 
 
 class ProductsDeleteView(DeleteView):
     form_class = ProductsModel
     template_name = 'delete_form.html'
     model = ProductsModel
-    success_url = reverse_lazy('products-all')
+    success_message = "Deleted successfully"
+    success_url = reverse_lazy('products-list')
+
 
 class ProductsCreateView(CreateView):
     form_class = ProductsModel
     template_name = 'create_update_form.html'
     model = ProductsModel
-    success_url = reverse_lazy('products-all')
+    success_url = reverse_lazy('products-list')

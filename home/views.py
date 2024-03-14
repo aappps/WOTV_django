@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 
 from products.models import ProductsModel
 
@@ -14,4 +14,11 @@ class HomeView(ListView):
     template_name = 'home/home.html'
     model = ProductsModel
 
+
+class PortofolioView(TemplateView):
+    template_name = "home/portofolio.html"
+
+
+class WotvView(TemplateView):
+    template_name = "home/wotv.html"
 

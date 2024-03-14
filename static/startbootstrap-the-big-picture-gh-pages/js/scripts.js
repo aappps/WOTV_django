@@ -5,3 +5,15 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+
+let elements = document.getElementsByClassName("column");
+
+let i;
+
+function four() {
+    for (i = 0; i < elements.length; i++) {
+        elements[i].style.flex = "25%";
+    }
+}
+

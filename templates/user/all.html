@@ -1,0 +1,83 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>White On The Valley</title>
+    <!-- Favicon-->
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'startbootstrap-the-big-picture-gh-pages/css/styles.css' %}" rel="stylesheet"/>
+</head>
+<body>
+<!-- Navigation-->
+{% include 'layout/menu.html' %}
+<!-- Page Content-->
+{% block content %}
+    <section id="sign-in">
+        <div class="login_body">
+            <div class="left">
+                
+                <label for="click" class="click-me">Log in </label>
+                <div class="content">
+                    <div class="text">
+                        White On The Valley
+                        <link rel="icon" type="image/x-icon"
+                              href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg' %}"/>
+                    </div>
+                    <label for="click" id="temp">x</label>
+                    <form>
+                        <label for="email">Email</label>
+                        <input type="email" placeholder="Name" id="email">
+
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Password" id="password">
+
+                        <button>Log in</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sign-up">
+        <div class="login_body">
+            <div class="right">
+                
+                <label for="click-sign-up" class="click-me_2">Sign up </label>
+                <div class="second_content">
+                    <div class="text">
+                        White On The Valley
+                        <link rel="icon" type="image/x-icon"
+                              href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg' %}"/>
+                    </div>
+                    <label for="click-sign-up" id="temp">x</label>
+                    <form>
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="Name" id="email">
+
+                        <label for="password">Password</label>
+                        <input type="password" placeholder="Password" id="password">
+
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" placeholder="1234 Main St" id="address">
+
+                        <label for="city">City</label>
+                        <input type="text" placeholder="City" id="city">
+
+                        <button>Sing up</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="{% static 'startbootstrap-the-big-picture-gh-pages/js/scripts.js' %}"></script>
+</body>
+</html>
+
