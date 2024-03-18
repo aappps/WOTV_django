@@ -1,12 +1,15 @@
 from django.contrib.auth.views import LoginView, PasswordChangeView, LogoutView, PasswordResetView
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 
 from authentication.forms import CreateUserForm
 
 
 # Create your views here.
+
+class UserActions(TemplateView):
+    template_name = 'authentication/user_actions.html'
 
 
 class LoginUserView(LoginView):
@@ -17,7 +20,7 @@ class LoginUserView(LoginView):
 
 class UserChangePasswordView(PasswordChangeView):
     template_name = "authentication/form.html"
-    success_url = reverse_lazy('')     #login
+    success_url = reverse_lazy('')  # login
 
 
 class CreateUserView(CreateView):
@@ -27,11 +30,8 @@ class CreateUserView(CreateView):
 
 
 class LogoutUserView(LogoutView):
-    success_url = reverse_lazy('')  #logaout
+    success_url = reverse_lazy('')  # logaout
 
 
 class ResetUserPassword(PasswordResetView):
     success_url = reverse_lazy('')
-
-
-

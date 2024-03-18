@@ -16,21 +16,28 @@
 <header class="content_header">
     <div class="container px-4 px-lg-5">
     <div class="navbar navbar-expand-lg ">
-        <span >White On The Valley</span>
+        <span>White On The Valley</span>
     </div>
     </div>
 </header>
 <body>
-<!-- Navigation-->
+
 {% include 'layout/menu.html' %}
-<!-- Page Content-->
+
 {% block content %}
     <section>
-        <div>
+     <div class="container">
+         <div class="text">
+<h4>At White On The Valley, we take immense pride in curating exquisite floral arrangements that add a touch of elegance and beauty to any occasion. With our commitment to quality, creativity, and customer satisfaction, we have built a diverse portfolio showcasing our finest work.</h4>
+     <h5>Whether you're sending a heartfelt gesture to a friend or surprising a loved one on a special occasion, we ensure that your flowers are delivered with care and attention to detail. Browse through our portfolio to see the joy our flowers bring to people's lives, one delivery at a time.
+    At W.O.T.V., we believe that every flower tells a story, and we're honored to be a part of yours. Explore our portfolio and let us help you add a touch of floral magic to life's precious moments.</h5>
+<h4 class="fw-bold">Contact us today to discuss your floral needs and let us create something extraordinary together.</h4>
+     </div>
+         
+     </div>
             <div class="gallery_body">
-                <div class="main">
-                    <div class="column img">
-                        <div class="row">
+                 <div class="main">
+                      <div class="row">
                             <div class="column">
                                 <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/gallery/8cb021b00e.jpg' %}"
                                      alt="">
@@ -105,13 +112,12 @@
                                      alt="">
                                 <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/gallery/71e3b86667c1a9.jpg' %}"
                                      alt="">
-                            
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            
     </section>
 {% endblock content %}
 
