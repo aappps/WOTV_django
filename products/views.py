@@ -8,7 +8,7 @@ from products.models import ProductsModel
 # Create your views here.
 
 class ProductsDetailView(DetailView):
-    template_name = "products/details.html"
+    template_name = "products/detailsDYI.html"
     model = ProductsModel
 
 

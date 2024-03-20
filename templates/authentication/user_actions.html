@@ -1,10 +1,77 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>White On The Valley</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon"
+          href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg' %}"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'startbootstrap-the-big-picture-gh-pages/css/styles.css' %}" rel="stylesheet"/>
 </head>
+<header class="header-login">
+    <div class="container px-4 px-lg-5">
+        <div class="navbar navbar-expand-lg ">
+         <form class="form-inline" >
+             <label for="email">Email:</label>
+             <input type="email" id="email" placeholder="" name="">
+             <label for="pwd">Password:</label>
+             <input type="password" id="pwd" placeholder="" name="">
+             <button type="submit">Log in</button>
+         </form> 
+        </div>
+    </div>
+</header>
 <body>
-<h1> User options</h1>
-</body>
-</html>
+
+{% include 'layout/menu.html' %}
+{% block content %}
+<section>
+    <div class="user_body">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="vl">
+                    </div>
+                    <div class="col">
+                        <div class="hide-md-lg">
+                        </div>
+                        <label>
+                            <input type="text" name="username" placeholder="Username" required>
+                        </label>
+                        <label>
+                            <input type="password" name="password" placeholder="Password" required>
+                        </label>
+                            <div class="col">
+                                <a href="#" class="fb btn">
+                                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                                </a>
+                                <a href="#" class="twitter btn">
+                                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                                </a>
+                                <a href="#" class="google btn">
+                                    <i class="fa fa-google fa-fw"></i> Login with Google+
+                                </a>
+                            </div>
+                            <div class="bottom-container">
+                                <label class="row">
+                                    <label class="col">
+                                        <a href="#" style="color:white" class="btn">Sign up</a>
+                                    </label>
+                                    <input type="submit" value="Sign up">
+                                </label>
+                                </div>
+                            </div>
+                       </div>
+            </form>
+        </div>
+    </div>
+           
+</section>        
+            
+    
+{% endblock %}
