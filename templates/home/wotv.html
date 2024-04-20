@@ -1,21 +1,87 @@
 {% extends 'layout/base.html' %}
 {% load  static %}
 {% block content %}
-
-<p> White o the valley</p>
-
-<div class="clearfix">
-  <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/ce9a255b1.jpg' %}" class="class="img-thumbnail" alt="...">
-  <p>
-    A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
-  </p>
-  <p>
-    As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at. It simply takes up space and should not really be read.
-  </p>
-
-</div>
-
     
-{% include 'layout/menu.html' %}
-
+    <section class="gallery_body">
+    <div style="color: rgba(114,114,117,0.9)" class="fst-italic">
+    <h4>About Us And Our Flowers:</h4>
+    </div>
+      <div style="margin-top: 60px" class="row">
+           <div class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/wotv5.jpg' %}" alt=""
+                    style="width:300px; margin-left: 50px;">
+           </div>
+           <div class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/wotv3.jpg' %}" alt=""
+                    style="width:300px; margin-left: 100px">
+           </div>
+           <div  style="margin-left: 100px" class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/wotv1.jpg' %}"
+                    alt="" style=width:300px;">
+           </div>
+            <div  style="margin-left: 50px" class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/wotv6(1).jpg' %}"
+                    alt="" style=width:300px;">
+           </div>
+       </div>
+      
+       <div style="color: rgba(114,114,117,0.9);text-align: center; margin-top: 30px" class="fst-italic">
+           <h5>Welcome to White On The Valley, where beauty blooms and fragrances enchant! Nestled in the heart of Bucharest, our boutique flower shop is a haven for floral enthusiasts and nature lovers alike.
+         Each bloom tells a story, evoking emotions and memories that transcend words. Whether you're celebrating a joyous occasion, expressing love and appreciation, or seeking solace in times of sorrow, our carefully curated selection of blooms is here to convey your heartfelt sentiments.</h5>
+       </div>
+       <div class="row">
+           <div class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/53f7140c2b636f098.jpg' %}" alt=""
+                    style="width:300px; margin-left: 50px;">
+           </div>
+           <div class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/b6a543d.jpg' %}" alt=""
+                    style="width:300px; margin-left: 100px">
+           </div>
+           <div  style="margin-left: 100px" class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/129bdbed54e.jpg' %}"
+                    alt="" style=width:300px;">
+           </div>
+            <div  style="margin-left: 50px" class="column">
+               <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/blog/b43d7778.jpg' %}"
+                    alt="" style=width:300px;">
+           </div>
+       </div>
+       <div style="color: rgba(114,114,117,0.9);text-align: center;margin-top: 30px" class="fst-italic">
+           <h5>Our team of skilled florists possesses a keen eye for design and a passion for creativity. Whether you're looking for a classic bouquet, a contemporary floral arrangement, or a custom creation tailored to your preferences, we're dedicated to bringing your vision to life with flair and finesse. Each arrangement is crafted with meticulous attention to detail, reflecting our commitment to excellence and customer satisfaction. 
+               We offer a variety of complementary services to enhance your floral experience.</h5>
+       </div>
+       
+  <div style="margin-top: 30px; margin-bottom: 50px; background-color:rgba(145,147,147,0.51)" class="container py-4 py-md-1 px-4 px-md-5 text-body-secondary">
+    <div class="row">
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none" >
+          <span class="fs-3">W.O.T.V.</span>
+        </a>
+        <ul class="list-unstyled large">
+          <li class="mb-2">Built with all the passion. 
+          <li class="mb-2">Code <a href="https://github.com/aappps/WOTV_django" target="_blank" rel="license noopener">Git</a>
+        </ul>
+      </div>
+    
+      <div class="col-2 col-lg-3 mb-5">
+        <h5 style="color: rgba(124,124,128,0.9)">We are here</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="https://maps.app.goo.gl/LXU2J6KXTHM8H1SZ7">Str.Postasului, nr.31A</a></li>
+          <li><a href="tel:+40 744 440 497">+40 744 440 497</a></li>
+        </ul>
+      </div>
+        <div class="col-2 col-lg-3 mb-5">
+        <h5 style="color:rgba(124,124,128,0.9);">Newsletter</h5>
+           <form class="form-inline" method="post" action="{% url 'subscribe-newsletter' %}">
+               {% csrf_token %}
+                <label for="email">
+                <input type="email" id="email" placeholder="Enter email" name="email">
+                </label>
+                <button type="submit">Subscribe</button>
+          </form>
+          </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

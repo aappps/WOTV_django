@@ -1,0 +1,15 @@
+
+{% block content %}
+    {% if subscribed %}
+        <h1>Thank You for subscribing!</h1>
+        <a href="{% url 'wotv-page' %}" class="link-info">Go Back</a>
+    {% else %}
+        <form class="form-inline" method="post" action="{% url 'subscribe-newsletter' %}">
+            {% csrf_token %}
+            <label for="email">
+                <input type="email" id="email" placeholder="Enter email" name="email">
+            </label>
+            <button type="submit">Subscribe</button>
+        </form>
+    {% endif %}
+{% endblock %}

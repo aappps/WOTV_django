@@ -1135,7 +1135,7 @@ progress {
 
 @media (min-width: 768px) {
     .col-md {
-        flex: 1 0 0%;
+        flex: 1 0 0;
     }
 
     .row-cols-md-auto > * {
@@ -12409,190 +12409,125 @@ body {
 }
 
 .home_body {
-    background-image: url("/static/startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-
-}
-.home_text{
-    align-content: flex-end;
+    background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg") no-repeat center center fixed;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
 }
 
 
-.gallery_body {
-    background: rgba(206,216,231,0.9) no-repeat fixed center;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-
-}
 /*gallery portofolio*/
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
+.gallery_body {
+        background: rgba(206, 216, 231, 0.9) no-repeat fixed center;
+        background-size: auto;
+        width: 100%;
+        height: auto;
+    }
+
+.row-p{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
 
 .column {
-  flex: 10%;
-  max-width: 100%;
-  padding: 0 1px;
+        flex: 10%;
+        max-width: 100%;
+        padding: 0 1px;
 
-}
+    }
 
 .column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  max-height: 100%;
-
-}
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+        max-height: 100%;
+    }
 
 .main {
-    max-width: 800px;
-    margin-left:450px;
-    display: block;
-}
+        max-width:950px;
+        margin-left: 750px;
+    }
 
-/*header portofolio*/
+
+    /*header portofolio*/
 .content_header {
-    background-color: rgba(51, 58, 65, 0.9);
-    color: rgba(221,225,231,0.9);
-    padding: 8px;
-    text-align: right;
-    position: fixed;
-    width: 100%;
-}
+        background-color: rgba(51, 58, 65, 0.9);
+        color: rgba(221, 225, 231, 0.9);
+        padding: 16px;
+        text-align: right;
+        position: fixed;
+        width: 100%;
+    }
 
 /*content portofolio-left*/
-.container {
+.container-p {
     box-sizing: border-box;
     justify-content: left;
     margin-left: 50px;
     margin-right: 50px ;
+    max-width: 650%;
 
   }
 
 .text {
     font-size: 10px;
-    padding-top: 5%;
+    margin-top: 90px;
     float: left;
     box-sizing: border-box;
-    max-width: 350px;
+    max-width: 650px;
     font-family: "Times New Roman", serif;
-
+    position: fixed;
+    align-content: center;
+    color: rgba(114,114,117,0.9);
   }
 
 
 /*about you botton*/
 .dropdown-toggle {
-    background-color: rgba(33,37,41,0.9);
-    font-size: 1.1em;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0);
-    border: rgba(33,37,41,0.9);
-    color: rgba(145, 146, 146, 0.9);
+        display: block;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+         margin-left: 5px;
+        text-decoration: none;
+        background-color: transparent;
+        color: darkgrey;
+        border-color: rgba(33, 37, 41, 0.9);
+    }
 
-}
 .dropdown-item {
-    background-color: #636464;
-}
+        background-color: #adb5bd;
+    }
 
-
-
-
-
-/*DYI-page
-
-.flip-box{
-    padding: 5rem 0;
-}
-
-.heading{
-    text-align: center;
-    padding: 5rem 0;
-
-}
-.heading-secondary{
-    font-size: 3rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    background-image: linear-gradient(to right, #636464, #adb5bd);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color:transparent;
-}
-
-.heading-secondary:hover{
-    text-shadow: 0.5rem 1rem 2rem rgba(0,0,0,.2);
-    letter-spacing: .1rem;
-    transform:translateY(-0.1rem)
-
-}
-
-.card{
-    height: 50rem;
-    background-color: #adb5bd;
-
-}
-
-.card-side{
-    height: 50rem;
-
-
-}
-
-.card-side-front{
-    background-color: #4f5050;
-
-}
-
-.card-side-back{
-    background-color: #6c757d;
-
-}*/
-
-.header-login{
-    background-color: rgba(67,69,74,0.9);
-    color: rgba(221,225,231,0.9);
-    padding: 8px;
-    float:left ;
-    position: fixed;
-    width: 100%;
-}
-
+    /*log-page*/
 .user_body {
-    background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/login1.jpg") no-repeat center center fixed;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
+        background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/login1.jpg") no-repeat center center fixed;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
 }
 
-* {box-sizing: border-box}
+.col-log {
 
-/* style the container */
-.container {
-  position: relative;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px 0 30px 0;
+  width: 100%;
+    margin: 6px auto auto;
+    padding-left: 15%;
+    padding-right: 20%;
+
 }
 
-/* style inputs and link buttons */
 input,
 .btn {
   width: 100%;
-  padding: 6px;
+  padding: 12px;
   border: none;
   border-radius: 4px;
   margin: 5px 0;
   opacity: 0.85;
   display: inline-block;
-  font-size: 15px;
-  line-height: 10px;
-  text-decoration: none; /* remove underline from anchors */
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none;
 }
 
 input:hover,
@@ -12600,7 +12535,7 @@ input:hover,
   opacity: 1;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
+
 .fb {
   background-color: #3B5998;
   color: white;
@@ -12612,81 +12547,131 @@ input:hover,
 }
 
 .google {
-  background-color: steelblue;
+  background-color: rgba(149,184,227,0.9);
   color: white;
 }
 
-/* style the submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  cursor: pointer;
+/*register-log*/
+.register {
+    background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/image/image3.jpg") no-repeat center center fixed;
+    background-size: cover;
+    width: auto;
+    height: auto;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+.btn-block{
+    background-color: #41464b;
 }
 
-/* Two-column layout */
-.col {
-  float: left;
+/*wotv-page*/
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 50%;
-  padding: 0 50px;
-  margin: 6px auto auto;
+  height: 33%;
+
+}
+.text-blog{
+    display: block;
 }
 
-/* Clear floats after the columns */
-.row:after {
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color:rgba(105,122,253,0.56);
+    color:rgba(51,58,65,0.56);
+  border: 1px solid #ddd;
+  cursor:pointer;
+
+}
+
+.form-inline button:hover {
+  background-color: white;
+}
+
+/*detail-page*/
+* {
+  box-sizing: border-box;
+}
+
+.bodyd {
+  background-color:cadetblue;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.maind {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.rowd {
+  margin: 8px -16px;
+}
+
+.rowd,
+.rowd > .columnd {
+  padding: 8px;
+}
+
+.columnd {
+  float: left;
+  width: 25%;
+}
+
+.rowd:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* vertical line */
-.vl {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  border: 2px solid #ddd;
-  height: 50px;
+/* Content */
+.contentd {
+  background-color: white;
+  padding: 10px;
 }
 
-/* text inside the vertical line */
-.inner {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  padding: 8px 10px;
-}
-
-/* hide some text on medium and large screens */
-.hide-md-lg {
-  display: none;
-}
-
-/* bottom container */
-.bottom-container {
-  text-align: center;
-  background-color: #666;
-  border-radius: 0px 0px 4px 4px;
-}
-
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 100px) {
-  .col {
-    width: 100%;
-    margin-top: 0;
-  }
-  /* hide the vertical line */
-  .vl {
-    display: none;
-  }
-  /* show the hidden text on small screens */
-  .hide-md-lg {
-    display: block;
-    text-align: center;
-  }
-}
+.details{
+ background-color: rgba(187, 209, 238, 0.9);
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 33%;
+    }

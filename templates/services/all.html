@@ -1,0 +1,33 @@
+{% extends  'layout/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <section style="margin-bottom: 3%; background-color:rgba(206,216,231,0.51)">
+     <div class="card text-white bg-secondary my-4 py-2 text-center">
+         <div class="card-body"><h5 class="text-white m-0">Whether you're marking a special milestone, expressing
+                    gratitude, or simply indulging in the beauty of nature, we invite you to experience the magic of
+                    flowers with us.
+                </h5>
+         </div>
+    </div>
+    <div class="row gx-4 gx-lg-5">
+
+        {% for services in object_list %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <img src="{{ services.image_field.url }}" class="card-img" alt="...">
+                    <div style="background-color: rgba(221,225,231,0.51)" class="card-body">
+                        <h2 class="card-title">{{ services.name }}</h2>
+                        <h2 class="card-text">{{ services.beneath}}</h2>
+                        <h4 class="card-text">{{ services.description }}</h4>
+                        
+                    </div>
+                    <div  class="card-footer"><a style="background-color: #5c636a" class="btn btn-primary btn-sm"
+                        href="{% url 'services-details' services.id %}">Show More</a></div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </section>
+{% endblock %}

@@ -1,77 +1,83 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>White On The Valley</title>
-    <!-- Favicon-->
+
     <link rel="icon" type="image/x-icon"
           href="{% static 'startbootstrap-the-big-picture-gh-pages/assets/goodimage2.jpg' %}"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
+
     <link href="{% static 'startbootstrap-the-big-picture-gh-pages/css/styles.css' %}" rel="stylesheet"/>
 </head>
-<header class="header-login">
-    <div class="container px-4 px-lg-5">
-        <div class="navbar navbar-expand-lg ">
-         <form class="form-inline" >
-             <label for="email">Email:</label>
-             <input type="email" id="email" placeholder="" name="">
-             <label for="pwd">Password:</label>
-             <input type="password" id="pwd" placeholder="" name="">
-             <button type="submit">Log in</button>
-         </form> 
-        </div>
-    </div>
-</header>
-<body>
+
+<body class="user_body">
 
 {% include 'layout/menu.html' %}
+
 {% block content %}
-<section>
-    <div class="user_body">
-        <div class="container">
-            <form>
+
+    <section>
+        <div class="vh-100">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="vl">
-                    </div>
-                    <div class="col">
-                        <div class="hide-md-lg">
-                        </div>
-                        <label>
-                            <input type="text" name="username" placeholder="Username" required>
-                        </label>
-                        <label>
-                            <input type="password" name="password" placeholder="Password" required>
-                        </label>
-                            <div class="col">
-                                <a href="#" class="fb btn">
-                                    <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-                                </a>
-                                <a href="#" class="twitter btn">
-                                    <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                                </a>
-                                <a href="#" class="google btn">
-                                    <i class="fa fa-google fa-fw"></i> Login with Google+
-                                </a>
-                            </div>
-                            <div class="bottom-container">
-                                <label class="row">
-                                    <label class="col">
-                                        <a href="#" style="color:white" class="btn">Sign up</a>
-                                    </label>
-                                    <input type="submit" value="Sign up">
-                                </label>
+                    <div class="col-sm-6 text-black">
+
+                        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+                            <form style="" method="post">
+                                    {% csrf_token %}
+                                <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"></h3>
+
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="id_username" name="username" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="id_username">Username</label>
                                 </div>
-                            </div>
-                       </div>
+
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="id_password" name="password" class="form-control form-control-lg"/>
+                                    <label class="form-label" for="id_password">Password</label>
+                                </div>
+
+                                <div class="pt-1 mb-4">
+                                    <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+                                </div>
+                            
+                            <p>Don't have an account? <a href="{% url 'register' %}" class="link-info">Register here</a>
+                            </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form style="width: 30rem;">
+                <div class="vh-100">
+                    <div class="container-fluid">
+
+                        <div class="col-log">
+                            <a href="https://m.facebook.com/login/?locale=ro_RO&refsrc=deprecated" class="fb btn">
+                                <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                            </a>
+                            <a href="https://twitter.com/i/flow/login" class="twitter btn">
+                                <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                            </a>
+                            <a href="https://g.co/kgs/bTEU9Z2" class="google btn">
+                                <i class="fa fa-google fa-fw"></i> Login with Google+
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </form>
+
         </div>
-    </div>
-           
-</section>        
-            
-    
+    </section>
 {% endblock %}
+</body>
+
+
+

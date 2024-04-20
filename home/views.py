@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 
-from products.models import ProductsModel
+from services.models import ServicesModel
 
 
 # Create your views here.
@@ -12,11 +12,11 @@ def home(request):
 
 class HomeView(ListView):
     template_name = 'home/home.html'
-    model = ProductsModel
+    model = ServicesModel
 
 
-class PortofolioView(TemplateView):
-    template_name = "home/portofolio.html"
+class PortfolioView(TemplateView):
+    template_name = "home/portfolio.html"
 
 
 class WotvView(TemplateView):
