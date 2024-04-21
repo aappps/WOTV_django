@@ -18,11 +18,6 @@ class LoginUserView(LoginView):
     redirect_authenticated_user = True
 
 
-class UserChangePasswordView(PasswordChangeView):
-    template_name = "authentication/register.html"
-    success_url = reverse_lazy('home-page')
-
-
 class CreateUserView(CreateView):
     template_name = "authentication/register.html"
     success_url = reverse_lazy('home-page')
@@ -30,8 +25,14 @@ class CreateUserView(CreateView):
 
 
 class LogoutUserView(LogoutView):
-    success_url = reverse_lazy('login')  # logaout
+    success_url = reverse_lazy('login')
 
 
 class ResetUserPassword(PasswordResetView):
     success_url = reverse_lazy('login')
+
+
+class UserChangePasswordView(PasswordChangeView):
+    template_name = "authentication/register.html"
+    success_url = reverse_lazy('home-page')
+

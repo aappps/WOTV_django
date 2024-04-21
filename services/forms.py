@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 
-from services.models import ServicesModel
+from services.models import ServicesModel, CartModel
 from services.models import Newsletter
 
 
@@ -15,3 +15,5 @@ class NewsLetterForm(ModelForm):
     class Meta:
         model = Newsletter
         fields = '__all__'
+
+

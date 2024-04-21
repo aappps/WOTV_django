@@ -14,6 +14,11 @@ class ServicesDetailView(DetailView):
     model = ServicesModel
 
 
+class ServicesSecondDetailView(DetailView):
+    template_name = "services/details_page.html"
+    model = ServicesModel
+
+
 class ServicesListView(ListView):
     template_name = "services/all.html"
     model = ServicesModel
@@ -47,9 +52,18 @@ class SubscribeNewsLetter(CreateView):
     form_class = NewsLetterForm
     template_name = "layout/news.html"
 
+    def __init__(self, **kwargs):
+        super().__init__(kwargs)
+        self.object = None
+
     def form_valid(self, form):
-        # Salvează formularul și setează o variabilă care să indice că s-a abonat cu succes
         self.object = form.save()
         subscribed = True
         return self.render_to_response(self.get_context_data(subscribed=subscribed))
+
+
+class CartDetailView(DetailView):
+      template_name = 'services/cart.html'
+
+
 

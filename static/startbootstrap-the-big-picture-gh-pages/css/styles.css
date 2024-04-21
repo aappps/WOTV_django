@@ -12553,7 +12553,7 @@ input:hover,
 
 /*register-log*/
 .register {
-    background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/image/image3.jpg") no-repeat center center fixed;
+    background: url("/static/startbootstrap-the-big-picture-gh-pages/assets/image/7e.jpg") no-repeat center center fixed;
     background-size: cover;
     width: auto;
     height: auto;
@@ -12610,7 +12610,7 @@ input:hover,
 .form-inline button {
   padding: 10px 20px;
   background-color:rgba(105,122,253,0.56);
-    color:rgba(51,58,65,0.56);
+  color:rgba(51,58,65,0.56);
   border: 1px solid #ddd;
   cursor:pointer;
 
@@ -12625,13 +12625,13 @@ input:hover,
   box-sizing: border-box;
 }
 
-.bodyd {
-  background-color:cadetblue;
+.body_d {
+  background-color:rgba(206, 216, 231, 0.9);
   padding: 20px;
   font-family: Arial, sans-serif;
 }
 
-.maind {
+.main_d {
   max-width: 1000px;
   margin: auto;
 }
@@ -12641,34 +12641,33 @@ h1 {
   word-break: break-all;
 }
 
-.rowd {
+.row_d {
   margin: 8px -16px;
 }
 
-.rowd,
-.rowd > .columnd {
+.row_d,
+.row_d > .column_d {
   padding: 8px;
 }
 
-.columnd {
+.column_d {
   float: left;
   width: 25%;
 }
 
-.rowd:after {
+.row_d:after {
   content: "";
   display: table;
   clear: both;
 }
 
 /* Content */
-.contentd {
+.content_d {
   background-color: white;
   padding: 10px;
 }
 
 .details{
- background-color: rgba(187, 209, 238, 0.9);
  display: block;
   margin-left: auto;
   margin-right: auto;

@@ -20,10 +20,6 @@ from django.urls import path, include
 from home.views import home, HomeView, WotvView, PortfolioView
 
 
-class UserAction:
-     pass
-
-
 urlpatterns = [
      path('', HomeView.as_view(), name='home-page'),
      path('portfolio/', PortfolioView.as_view(), name='portfolio-page'),

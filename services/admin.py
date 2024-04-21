@@ -6,3 +6,4 @@ from services.models import ServicesModel
 
 admin.site.register(ServicesModel)
 
+

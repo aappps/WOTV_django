@@ -20,14 +20,16 @@ from django.urls import path
 from home.views import HomeView
 
 from services.views import ServicesDetailView, ServicesListView, ServicesDeleteView, ServicesUpdateView, \
-    ServicesCreateView, SubscribeNewsLetter
+    ServicesCreateView, SubscribeNewsLetter, ServicesSecondDetailView
 
 urlpatterns = [
     path('', ServicesListView.as_view(), name='services-list'),
     path('news/', SubscribeNewsLetter.as_view(), name='subscribe-newsletter'),
     path('detail/<int:pk>/', ServicesDetailView.as_view(), name='services-details'),
+    path('details/<int:pk>/', ServicesSecondDetailView.as_view(), name='services-details-page'),
     path('update/<int:pk>/', ServicesUpdateView.as_view(), name='services-edit'),
     path('delete/<int:pk>/', ServicesDeleteView.as_view(), name='services-delete'),
     path('add/', ServicesCreateView.as_view(), name='add-services'),
+
 
 ]

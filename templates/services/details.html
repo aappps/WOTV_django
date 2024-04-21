@@ -4,70 +4,79 @@
 {% include 'layout/menu.html' %}
 
 {% block content %}
-<section class="details">
-<div>
-<h2>DIY|Make your own bouquet of flowers. </h2>
-<div class="rowd"> 
-  <div class="columnd">
-    <div class="contentd">
+<section class="body_d">
+<div class="details">
+<h2 style="color: #5c636a;margin-top: 30px">DIY|Make your own bouquet of flowers. </h2>
+<div class="row_d"> 
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/fresia1.jpg' %}" alt="" style="width: 100%">
       <h5>Freesia</h5>
-      <p>Lorem ipsum..</p>
+      <p>$3</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/lisianthus1.jpg' %}" alt="" style="width:100%">
       <h5>Magical Lisianthus</h5>
-      <p>Lorem ipsum..</p>
+      <p>$2</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/spray.roses.jpg' %}" alt="" style="width:100%">
       <h5>Lovely Roses</h5>
-      <p>Lorem ipsum..</p>
+      <p>$3</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/peonies1.jpg' %}" alt="" style="width:100%">
       <h5>Beautiful Peonies</h5>
-      <p>Lorem ipsum..</p>
+      <p>$2</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
 </div> 
-    
-<h2>Or You can choose our beautiful bouquet</h2>
-
-<div class="columnd">
-    <div class="contentd">
+   
+<h2 style="color: #5c636a">Or You can choose our beautiful bouquet</h2>
+<div class="row_d">
+<div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/bouque peony.jpg' %}" alt="" style="width:100%">
       <h5>Bouquet of Peonies</h5>
-      <p>Lorem ipsum..</p>
+      <p>$25</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/bouque.gerbera.jpg' %}" alt="" style="width:100%">
       <h5>Bouquet of Gerbera</h5>
-      <p>Lorem ipsum..</p>
+      <p>$20</p>
+       <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button> 
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/bouque roses.jpg' %}" alt="" style="width:100%">
-      <h5>Bouquet of Roses</h5>
-      <p>Lorem ipsum..</p>
+      <h5>Bouquet of Spray Roses</h5>
+      <p>$35</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
-  <div class="columnd">
-    <div class="contentd">
+  <div class="column_d">
+    <div class="content_d">
       <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/dyi/bouque.lisianthus.jpg' %}" alt="" style="width:100%">
       <h5>Bouquet of Lisianthus</h5>
-      <p>Lorem ipsum..</p>
+      <p>$25</p>
+      <button type="button" class="btn btn-secondary btn-sm" href="{% url 'cart.html' %}">Add to cart</button>  
     </div>
   </div>
   </div>
+  </div> 
 </section>
 {% endblock %}

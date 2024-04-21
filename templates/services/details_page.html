@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'layout/base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% include 'layout/menu.html' %}
+
+{% block content %}
+    <div class="container">
+        <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/image/7e.jpg' %}" alt="" style="width:100%;">
+        <div class="bottom-left">flowers</div>
+    </div>
+{% endblock %}
