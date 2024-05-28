@@ -3,14 +3,13 @@
 {% block content %}
     <section style="background-color: rgba(149,184,227,0.56)">
     {% if user_cart_items %}
-        <h1>Your Shopping Cart</h1>
+        <h2>Your Shopping Cart</h2>
         <table>
             <thead>
                 <tr>
                     <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
+                    <th>Price</th> 
+                    <th>Quantity</th> 
                 </tr>
             </thead>
             <tbody>
@@ -19,18 +18,26 @@
                     <td>{{ item.product.name }}</td>
                     <td>${{ item.product.price }}</td>
                     <td>{{ item.quantity }}</td>
-                    <td>${{ item.total }}</td>
+                    <td>
+                        <form action="{% url 'remove-from-cart' item.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-outline-dark">Remove</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
         <p>Total Price: ${{ total_price }}</p>
+        
+        <a style="background-color:rgba(124,124,128,0.56)" class="btn btn-primary btn-sm" href="{% url 'services-details' pk=1 %}">Add more</a>
+        <a style="background-color:rgba(105,171,189,0.56)" class="btn btn-primary btn-sm" href="{% url 'login' %}">Continue</a>
     {% else %}
-        <div class="center" id="cart-message">
-            <p>Your cart is empty, add some products</p>
-            <a class="btn btn-primary btn-sm" href="{% url 'services-details' pk=services.id %}">Add Product</a>
+        <div class="text-md-center" id="cart-message">
+            <h3>Your cart is empty, add some products</h3>
+            
+            <a class="btn btn-outline-secondary" href="{% url 'services-details' pk=1 %}">Add Products</a>
         </div>
-
     {% endif %}
     </section>
 {% endblock %}

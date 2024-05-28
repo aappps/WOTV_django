@@ -21,7 +21,7 @@ from home.views import HomeView
 
 from services.views import ServicesListView, ServicesDeleteView, ServicesUpdateView, \
     ServicesCreateView, SubscribeNewsLetter, ServicesSecondDetailView, ProductDetailView, cart_view, add_to_cart, \
-    contact_view, success_view
+    contact_view, success_view, remove_from_cart
 
 urlpatterns = [
     path('', ServicesListView.as_view(), name='services-list'),
@@ -35,5 +35,6 @@ urlpatterns = [
     path('add-to-cart/<int:product_id>/', add_to_cart, name='add-to-cart'),
     path('contact/<int:pk>/', contact_view, name='services-details-page'),
     path('contact/success/', success_view, name='contact_success'),
+    path('remove-from-cart/<int:item_id>/', remove_from_cart, name='remove-from-cart'),
 
 ]

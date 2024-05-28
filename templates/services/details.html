@@ -12,10 +12,11 @@
                                 <img src="/media/{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%">
                                 <p>{{ product.name }}</p>
                                 <p>${{ product.price }}</p>
-                                    <form action="{% url 'cart-view' %}" method="post">
-                                        {% csrf_token %}
-                                        <button type="submit" class="btn btn-primary">Add to cart</button>
-                                    </form>
+                                <form action="{% url 'add-to-cart' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-secondary btn-sm">Add to cart</button>
+                                </form>
+
                             </div>
                         </div>
                     {% endfor %}
@@ -33,7 +34,7 @@
                                 <p>${{ product.price }}</p>
                                     <form action="{% url 'cart-view' %}" method="post">
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-primary">Add to cart</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm">Add to cart</button>
                                     </form>
                             </div>
                         </div>

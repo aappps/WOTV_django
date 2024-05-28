@@ -65,22 +65,25 @@ def cart_view(request):
     return render(request, 'services/cart.html', {'user_cart_items': user_cart_items, 'total_price': total_price})
 
 
+
 def add_to_cart(request, product_id):
     product = get_object_or_404(ProductModel, id=product_id)
 
     if request.user.is_authenticated:
+        # Verifică dacă produsul există deja în coș
         existing_cart_item = CartModel.objects.filter(user=request.user, product=product).first()
 
         if existing_cart_item:
+            # Dacă produsul există, actualizează cantitatea
             existing_cart_item.quantity += 1
             existing_cart_item.save()
         else:
+            # Dacă produsul nu există, creează o nouă înregistrare în coș
             new_cart_item = CartModel(user=request.user, product=product, quantity=1)
             new_cart_item.save()
 
         return redirect('cart-view')
     else:
-
         return redirect('login')
 
 
@@ -93,6 +96,12 @@ class ProductDetailView(DetailView):
         context['products_section1'] = ProductModel.objects.filter(price__lte=10)
         context['products_section2'] = ProductModel.objects.filter(price__gt=10)
         return context
+
+
+def remove_from_cart(request, item_id):
+    cart_item = get_object_or_404(CartModel, id=item_id)
+    cart_item.delete()
+    return redirect('cart-view')
 
 
 def contact_view(request, pk):

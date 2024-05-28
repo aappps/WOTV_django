@@ -15,20 +15,18 @@
                     moments.</h4>
                 <h4 class="fw-bold">Contact us today to discuss your floral needs and let us create something
                     extraordinary together.</h4>
-                
-                <form method="post" action="">
-                    {% csrf_token %}
-                <div class="mb-3">
-                   <h5> <label for="exampleFormControlInput1" class="form-label">Email address</label></h5>
-                    <input type="email" class="form-control" id="exampleFormControlInput1"
-                           placeholder="">
-                </div>
-                <div class="mb-3">
-                   <h5> <label for="exampleFormControlTextarea1" class="form-label">Message</label></h5>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button type="button" class="btn btn-secondary">Send message</button>
 
+                <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <h5><label for="exampleFormControlInput1" class="form-label">Email address</label></h5>
+                    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="" required>
                 </div>
+                <div class="mb-3">
+                    <h5><label for="exampleFormControlTextarea1" class="form-label">Message</label></h5>
+                    <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Send message</button>
             </form>
             </div>  
             </div>
