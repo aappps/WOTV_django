@@ -19,17 +19,21 @@ from django.urls import path
 
 from home.views import HomeView
 
-from services.views import ServicesDetailView, ServicesListView, ServicesDeleteView, ServicesUpdateView, \
-    ServicesCreateView, SubscribeNewsLetter, ServicesSecondDetailView
+from services.views import ServicesListView, ServicesDeleteView, ServicesUpdateView, \
+    ServicesCreateView, SubscribeNewsLetter, ServicesSecondDetailView, ProductDetailView, cart_view, add_to_cart, \
+    contact_view, success_view
 
 urlpatterns = [
     path('', ServicesListView.as_view(), name='services-list'),
     path('news/', SubscribeNewsLetter.as_view(), name='subscribe-newsletter'),
-    path('detail/<int:pk>/', ServicesDetailView.as_view(), name='services-details'),
+    path('detail/<int:pk>/', ProductDetailView.as_view(), name='services-details'),
     path('details/<int:pk>/', ServicesSecondDetailView.as_view(), name='services-details-page'),
     path('update/<int:pk>/', ServicesUpdateView.as_view(), name='services-edit'),
     path('delete/<int:pk>/', ServicesDeleteView.as_view(), name='services-delete'),
     path('add/', ServicesCreateView.as_view(), name='add-services'),
-
+    path('cart/', cart_view, name='cart-view'),
+    path('add-to-cart/<int:product_id>/', add_to_cart, name='add-to-cart'),
+    path('contact/<int:pk>/', contact_view, name='services-details-page'),
+    path('contact/success/', success_view, name='contact_success'),
 
 ]

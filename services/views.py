@@ -1,17 +1,13 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from django.template.context_processors import request
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, UpdateView, DeleteView, CreateView
+from django.contrib.auth.decorators import login_required
 
-from services.forms import NewsLetterForm
-from services.models import ServicesModel, Newsletter
-
-
-# Create your views here.
-
-class ServicesDetailView(DetailView):
-    template_name = "services/details.html"
-    model = ServicesModel
+from services.forms import NewsLetterForm, ContactForm
+from services.models import ServicesModel, Newsletter, CartModel, ProductModel
+from django.contrib.auth.models import User
 
 
 class ServicesSecondDetailView(DetailView):
@@ -52,8 +48,8 @@ class SubscribeNewsLetter(CreateView):
     form_class = NewsLetterForm
     template_name = "layout/news.html"
 
-    def __init__(self, **kwargs):
-        super().__init__(kwargs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.object = None
 
     def form_valid(self, form):
@@ -62,8 +58,55 @@ class SubscribeNewsLetter(CreateView):
         return self.render_to_response(self.get_context_data(subscribed=subscribed))
 
 
-class CartDetailView(DetailView):
-      template_name = 'services/cart.html'
+@login_required
+def cart_view(request):
+    user_cart_items = CartModel.objects.filter(user=request.user)
+    total_price = sum(item.product.price * item.quantity for item in user_cart_items)
+    return render(request, 'services/cart.html', {'user_cart_items': user_cart_items, 'total_price': total_price})
 
 
+def add_to_cart(request, product_id):
+    product = get_object_or_404(ProductModel, id=product_id)
 
+    if request.user.is_authenticated:
+        existing_cart_item = CartModel.objects.filter(user=request.user, product=product).first()
+
+        if existing_cart_item:
+            existing_cart_item.quantity += 1
+            existing_cart_item.save()
+        else:
+            new_cart_item = CartModel(user=request.user, product=product, quantity=1)
+            new_cart_item.save()
+
+        return redirect('cart-view')
+    else:
+
+        return redirect('login')
+
+
+class ProductDetailView(DetailView):
+    model = ProductModel
+    template_name = 'services/details.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products_section1'] = ProductModel.objects.filter(price__lte=10)
+        context['products_section2'] = ProductModel.objects.filter(price__gt=10)
+        return context
+
+
+def contact_view(request, pk):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact_success')
+    else:
+        form = ContactForm()
+    return render(request, 'services/details_page.html')
+
+
+def success_view(request):
+    success_message = "Thank you! We received your message!"
+
+    return render(request, 'services/contact_success.html', {'success_message': success_message})

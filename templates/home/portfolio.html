@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="content_header">
-    A little part of our work
+    A little piece of our work
     </div>
     <section>
         <div class="container-p">
@@ -17,6 +17,7 @@
                     extraordinary together.</h4>
                 
                 <form method="post" action="">
+                    {% csrf_token %}
                 <div class="mb-3">
                    <h5> <label for="exampleFormControlInput1" class="form-label">Email address</label></h5>
                     <input type="email" class="form-control" id="exampleFormControlInput1"

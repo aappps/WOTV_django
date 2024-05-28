@@ -4,8 +4,24 @@
 {% include 'layout/menu.html' %}
 
 {% block content %}
-    <div class="container">
-        <img src="{% static 'startbootstrap-the-big-picture-gh-pages/assets/image/7e.jpg' %}" alt="" style="width:100%;">
-        <div class="bottom-left">flowers</div>
-    </div>
+    <section class="user_body">
+        <div class="details">
+            <h4>Contact us to discuss your floral needs and let us create something
+                extraordinary together.</h4>
+            <form method="post">
+                {% csrf_token %}
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" required></textarea><br><br>
+
+                <button style="background-color: #5c636a" type="submit">Send</button>
+            </form>
+        </div>
+
+    </section>
 {% endblock %}
